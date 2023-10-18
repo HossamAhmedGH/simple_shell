@@ -2,22 +2,22 @@
 
 /**
  * error_env - an error message for env in get_env.
- * @datash: data relevant (counter, arguments)
+ * @datash: data and relevant (counter, arguments)
  * Return: error message.
  */
 
 char *error_env(data_shell *datash)
 {
-	int length;
+	int lngth;
 	char *error;
 	char *ver_str;
 	char *msg;
 
 	ver_str = aux_itoa(datash->counter);
 	msg = ": Unable to add/remove from environment\n";
-	length = _strlen(datash->av[0]) + _strlen(ver_str);
-	length += _strlen(datash->args[0]) + _strlen(msg) + 4;
-	error = malloc(sizeof(char) * (length + 1));
+	lngth = _strlen(datash->av[0]) + _strlen(ver_str);
+	lngth += _strlen(datash->args[0]) + _strlen(msg) + 4;
+	error = malloc(sizeof(char) * (lngth + 1));
 	if (error == 0)
 	{
 		free(error);
@@ -46,14 +46,14 @@ char *error_env(data_shell *datash)
 
 char *error_path_126(data_shell *datash)
 {
-	int length;
+	int lngth;
 	char *ver_str;
 	char *error;
 
 	ver_str = aux_itoa(datash->counter);
-	length = _strlen(datash->av[0]) + _strlen(ver_str);
-	length += _strlen(datash->args[0]) + 24;
-	error = malloc(sizeof(char) * (length + 1));
+	lngth = _strlen(datash->av[0]) + _strlen(ver_str);
+	lngth += _strlen(datash->args[0]) + 24;
+	error = malloc(sizeof(char) * (lngth + 1));
 	if (error == 0)
 	{
 		free(error);
